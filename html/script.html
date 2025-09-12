@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    
+    <body>
+        <h1 id="titulo"></h1>
+        <h2 class="sub">DJ</h2>
+        <h2 class="sub">DJ</h2>
+        <h2 class="sub">DJ</h2>
+        <h2 class="sub">DJ</h2>
+        <h2 class="sub">DJ</h2>
+        <h2 class="sub">DJ</h2>
+        <h2 class="sub">DJ</h2>
+        <h2 class="sub">DJ</h2>
+
+
+        <button id="botaoalerta">clicar aqui</button>
+        <script>
+            alert(`tamanho ${window.screen.width} x ${window.screen.height} x  ${location} x ${navigator}`)
+
+            const alerta = ()=> {
+                alert("esse botao foi clicado!")
+            }
+
+            document.getElementById("botaoalerta").onclick=alerta
+
+
+            const titulo = document.getElementById("titulo");  
+            titulo.innerText = "bem vindo"
+
+            const subtitulos = document.querySelectorAll(".sub");
+            
+
+            
+            subtitulos.forEach((element)=>{
+                element.innerText ="Daniel jesus"
+            })
+            
+            </script>
+
+        <button onclick="alerta()">clica aqui</button>
+
+        <h1>aula de script. Que de tudo certo. AMEM</h1>
+    
+    </body>
+
+
+</html>
+
+getElementById
