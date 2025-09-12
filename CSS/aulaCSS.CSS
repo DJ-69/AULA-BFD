@@ -1,0 +1,44 @@
+h1{
+    color: rgb(76, 0, 255);
+    font-size: xx-large;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+    text-align: left;
+}
+
+.titulo{     border: 5px solid black;
+    border-radius: 10px 20px;
+    box-shadow: 2px 5px;
+    text-decoration: underline;
+}
+.principal{
+        font-size: xx-large;
+    text-align: center;
+    text-decoration: underline;
+    border: 5px solid black;
+    border-radius: 10px 20px;
+    box-shadow: 2px 5px
+    
+}
+
+p{
+    font-weight: 300;
+    color:red
+}
+ol{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    color: black;
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+}
+
+li.sublinhado{
+text-decoration: wavy underline black;
+}
+
+.subcartao {
+    display: flex;
+}
