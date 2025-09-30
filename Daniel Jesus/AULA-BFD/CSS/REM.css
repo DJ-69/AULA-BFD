@@ -1,0 +1,28 @@
+p {
+    font-size: 3rem;
+    color: blue;
+    border:solid 3px red;
+    border-radius: 7.5px;
+    
+}
+
+html {
+    font-size: 1rem;
+}       
+
+.pai{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.filho{
+    width: 50%;
+    border: double rgb(0, 0, 0) 2.5px;
+
+}
+
+.ocupado {
+    width: 50vmax;
+    height: 50vmin;
+    background-color: red;
+}
