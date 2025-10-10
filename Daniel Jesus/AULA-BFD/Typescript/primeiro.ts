@@ -1,60 +1,54 @@
-const calcularcubo = (a:number):number =>{
-    return a*a;
-}
+class Guardainformaçao{
+    private info:string
 
-console.log(calcularcubo(3));
-
-const primeiraouultimaletra = (a:string,b:boolean) =>{
-    if (b == true){
-        console.log(a[0]);
+    constructor(info:string){
+        this.info=info
     }
-    else{
-        console.log(a[a.length-1])
+
+    guardainfor(info:string):void{
+        this.info= info
+    }
+
+    falarinfor(info:string):void{
+        console.log(`a informaçao é ${this.info}`)
     }
 }
 
-primeiraouultimaletra("Olá",true);
 
-//
+class GuardaSegredo extends Guardainformaçao{
+    protected senha:number;
 
-type Aluno ={
-    nome: string;
-    matricula: number;
-    nota: number;
+    constructor(info:string, senha:number){
+        super(info)
+        this.senha = senha
+    }
 }
 
-const alEx:Aluno = {
-    nome:"Daniel Jesus",
-    matricula:231231321,
-    nota:10
-};
+const gi = new Guardainformaçao("Meu Segredo");
 
-type Turma={
-    materia: string;
-    codigo: number;
-    alunos:Array<Aluno>;
+gi.guardainfor("novo seg")
+
+const gs = new GuardaSegredo("Meu Segredo",123123);
+gs.guardainfor("novo segredo")
+
+
+
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+abstract class Bebidas {
+    abstract preparaçao(): void
+
 }
 
-
-const turEx: Turma = {
-    materia:"React ",
-    codigo:1321321,
-    alunos:[alEx]
+class alcoolicos extends Bebidas{
+    preparaçao(): void {
+        prompt("Vc é maior de 18?")
+        console.log("a bebida é feita com gin");
+    }
 }
 
-
-const imprimirpresença = (t:Turma) => {
-    console.log(t.alunos);
+class naoalcoolicos extends Bebidas{
+    preparaçao(): void{
+        console.log()
+    }
 }
-
-imprimirpresença(turEx)
-
-const calcularmedia = (t:Turma):number => {
-    let acc =0.0;
-    t.alunos.forEach((al)=>{
-        acc+=al.nota;
-    });
-    return acc/t.alunos.length;
-};
-
-console.log(calcularmedia(turEx))
