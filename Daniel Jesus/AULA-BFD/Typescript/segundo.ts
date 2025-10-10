@@ -1,55 +1,77 @@
-class Estudante{
-    nome: string;
-    matricula: number;
-    media:number;
+class GerenciadorFormas{
+    formas:Array<Forma>
 
-    constructor(nome:string,matricula:number){
-        this.matricula=matricula
-        this.nome=nome
-        this.media=0
+    constructor(formas:Array<Forma>){
+        this.formas=formas
     }
 
-    calcularmedia(g1:number,g2:number){
-        this.media = (g1+2*g2)/3
+    CalcularSomaArea() {
+        let acc = 0;
+        this.formas.forEach(form => {
+            acc+= form.calcularArea();
+        })
+        return acc;
     }
-
-    imprimir():void{
-        console.log(`${this.media}`)
-    }
-
 }
 
-class turma{
-    nome: string;
-    alunos: Array<Estudante>;
-    
-    constructor(nome:string,alunos:Array<Estudante>){
-        this.nome=nome
-        this.alunos=alunos
+abstract class Forma{
+    poli:number
+
+    constructor(poli:number){
+        this.poli = poli
     }
 
-    notaleatoria():number{
-        return Math.random()*10;
+    abstract calcularArea(): number;
+    
+}
+
+
+
+class Circulo extends Forma {
+    calcularArea(): number {
+        return Math.PI
+    }
+}
+
+
+
+class Triangulo extends Forma {
+    public altura:number
+    public comprimento:number
+
+    constructor(altura:number,comprimento:number){
+        super(3)
+        this.altura=altura
+        this.comprimento=comprimento
+    }
+
+    calcularArea(): number {
+    return this.comprimento*this.altura/2
         
     }
-    notasMalucas():void{
-        this.alunos.forEach( aluno=> {
-            const g1 = this.notaleatoria();
-            const g2 = this.notaleatoria();
-            aluno.calcularmedia(g1,g2);
-            console.log(`NOta nova de ${aluno.nome} é ${aluno.media}`)
-        })  
-    }
 }
+
+
+
+class Retangulo extends Forma{
+    public altura:number
+    public comprimento:number
+
+    constructor(altura:number,comprimento:number){
+        super(4)
+        this.altura=altura
+        this.comprimento=comprimento
+    }
+
+    calcularArea(): number {
+    return this.altura*this.comprimento
+    }
     
-const a1 = new Estudante("Daniel",13221332);
-const a2 = new Estudante("Fernanda",213312312);
+}
 
-const t1 = new turma("React BFD",[a1,a2]);
+const t = new Triangulo(10,10);
+const r = new Retangulo(10,10);
 
-t1.notasMalucas();
+const ger =new GerenciadorFormas([t,r])
 
-
-
-    
-    //const numAlkea=Math.random()
+console.log(ger.CalcularSomaArea());
