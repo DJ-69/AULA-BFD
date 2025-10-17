@@ -1,54 +1,43 @@
-class Guardainformaçao{
-    private info:string
+import promptSync from "prompt-sync";
+const prompt = promptSync();
 
-    constructor(info:string){
-        this.info=info
-    }
+class nota{
+    tom:string;
+    oitava:number;
+    tons_validos = "CDEFGAB";
 
-    guardainfor(info:string):void{
-        this.info= info
-    }
-
-    falarinfor(info:string):void{
-        console.log(`a informaçao é ${this.info}`)
-    }
-}
-
-
-class GuardaSegredo extends Guardainformaçao{
-    protected senha:number;
-
-    constructor(info:string, senha:number){
-        super(info)
-        this.senha = senha
+    constructor(tom:string,oitava:number) {
+        if(!this.tons_validos.includes(tom)){
+            throw new Error("Tom inválido!");
+        }
+        this.tom=tom
+        this.oitava=oitava
     }
 }
 
-const gi = new Guardainformaçao("Meu Segredo");
+class GerenciadorDeNotas{
+    notas:Array<nota>
 
-gi.guardainfor("novo seg")
+    constructor(){
+        this.notas=[];
+    }
 
-const gs = new GuardaSegredo("Meu Segredo",123123);
-gs.guardainfor("novo segredo")
-
-
-
-//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-
-abstract class Bebidas {
-    abstract preparaçao(): void
+    PerguntarNota():void{
+        const t = prompt("qual é o tom?")+"";
+        const o = Number(prompt("qual é a oitava?"));
+        try {
+            const n= new nota(t,o);
+            this.notas.push(n);
+        } catch (error:any) {
+            console.log("Ocorreu um erro ",error.message )
+        }
+        
+    }
 
 }
 
-class alcoolicos extends Bebidas{
-    preparaçao(): void {
-        prompt("Vc é maior de 18?")
-        console.log("a bebida é feita com gin");
-    }
-}
-
-class naoalcoolicos extends Bebidas{
-    preparaçao(): void{
-        console.log()
-    }
+const g = new GerenciadorDeNotas();
+while(true){
+    g.PerguntarNota();
+    console.log(g.notas);
 }
