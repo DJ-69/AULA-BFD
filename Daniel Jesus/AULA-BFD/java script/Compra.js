@@ -28,6 +28,7 @@ class Compra extends entrada {
         console.log(`Quantidade: ${this.qtd}`);
         console.log(`Preço Unitário: R$ ${this.precoUnitario.toFixed(2)}`);
         console.log("---------------------");
+        console.log("gretrjtrjtythrejyt")
     }
 }
 
