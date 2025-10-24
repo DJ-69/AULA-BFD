@@ -1,9 +1,7 @@
-const entrada = require("./entrada");
-
-
+const Compra = require("./Compra");
 
 //o construdor determina o que cada class representa
-class Compra extends entrada {
+class Entrada extends Compra {
     constructor(livro, preco, vendedor, data_venda, qtd) {
         this.livro = livro;
         this.preco = preco;
@@ -31,4 +29,4 @@ class Compra extends entrada {
     }
 }
 
-module.exports = Compra;
+module.exports = Entrada;

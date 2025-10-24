@@ -1,23 +1,15 @@
 
 
 //o construtor determina o que cada class representa
-class Livro {
-    constructor(titulo, autor, anoPublicacao, numeroPaginas, qtdEstoque) {
-        this.titulo = titulo;
-        this.autor = autor;
-        this.anoPublicacao = anoPublicacao;
+class Livro extends Obra {
+    constructor(titulo, autor, anoPublicacao, qtdEstoque, numeroPaginas) {
+        super(titulo, autor, anoPublicacao, qtdEstoque);
         this.numeroPaginas = numeroPaginas;
-        this.qtdEstoque = qtdEstoque;
     }
     //imprimi cada class do contrutor
     imprimirDetalhes() {
-        console.log("---------------------");
-        console.log(`Título: ${this.titulo}`);
-        console.log(`Autor: ${this.autor}`);
-        console.log(`Ano de Publicação: ${this.anoPublicacao}`);
         console.log(`Número de Páginas: ${this.numeroPaginas}`);
-        console.log(`Quantidade em Estoque: ${this.qtdEstoque}`);
-        console.log("---------------------");
+
     }
 
 }
