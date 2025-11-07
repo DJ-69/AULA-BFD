@@ -1,5 +1,3 @@
-
-
 //o construtor determina o que cada class representa
 class Livro extends Obra {
     constructor(titulo, autor, anoPublicacao, qtdEstoque, numeroPaginas) {
@@ -9,6 +7,7 @@ class Livro extends Obra {
     //imprimi cada class do contrutor
     imprimirDetalhes() {
         console.log(`Número de Páginas: ${this.numeroPaginas}`);
+        
 
     }
 
