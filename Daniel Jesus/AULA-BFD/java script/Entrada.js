@@ -1,4 +1,5 @@
 
+
 //o construdor determina o que cada class representa
 class Entrada {
     constructor(livro, preco, vendedor, data_venda, qtd) {
