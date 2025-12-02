@@ -8,7 +8,7 @@ function Contador() {
     }, [count]);
 
       const diminuir = ()=> setCount(c =>c -1)
-      const aumentar = () => setCount(c => c + 1000);
+      const aumentar = () => setCount(c => c + 2);
         
     useEffect(()=>{
         alert("Alo!");
